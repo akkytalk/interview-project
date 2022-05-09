@@ -1,15 +1,5 @@
 import React, { useState } from "react";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Col,
-  ModalBody,
-  ModalHeader,
-  Row,
-  Button,
-  Modal,
-} from "reactstrap";
+import { Card, CardBody, CardHeader, Col, Row, Button } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Form, Formik } from "formik";
@@ -127,14 +117,12 @@ function JSONForm() {
                       {
                         "type": "text",
                         "name": "user.hobbies",
-                        "label": "User's hobbies",
-                    "isMandatory": true
+                        "label": "User's hobbies"
                       },
                       {
                         "type": "text",
                         "name": "user.os",
-                        "label": "User's operating system",
-                        "isMandatory": true
+                        "label": "User's operating system"
                       }
                     ]
                    }
@@ -208,20 +196,6 @@ function JSONForm() {
             <SignupForm jsonData={jsonData} />
           </Col>
         </Row>
-        {/* formik dynamic inputs */}
-        {/* <Formik
-          initialValues={{}}
-          onSubmit={(values, { setSubmitting }) => {
-            alert(JSON.stringify(values, null, 2));
-          }}
-          validationSchema={signupSchema}
-        >
-          {(formProps) => {
-            return (
-              <Form>{console.log("formProps.values", formProps.values)}</Form>
-            );
-          }}
-        </Formik> */}
       </CardBody>
     </Card>
   );

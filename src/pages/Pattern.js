@@ -1,15 +1,5 @@
 import React, { useState } from "react";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Col,
-  ModalBody,
-  ModalHeader,
-  Row,
-  Button,
-  Modal,
-} from "reactstrap";
+import { Card, CardBody, CardHeader, Col, Row, Button } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Form, Formik } from "formik";
@@ -84,10 +74,8 @@ function JSONForm() {
               }}
               onSubmit={handleSubmit}
               validationSchema={Yup.object().shape({
-                nbr: Yup.number()
-                  .required("Required")
-                  .min(1, "Minimum 1")
-                  .max(5, "Maximum 5"),
+                nbr: Yup.number().required("Required").min(1, "Minimum 1"),
+                // .max(5, "Maximum 5"),
               })}
             >
               {(formProps) => {
