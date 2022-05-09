@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Form from "./pages/Form";
+import { Nav, NavItem, NavLink } from "reactstrap";
+import Pattern from "./pages/Pattern";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app p-4 text-center">
+      {/* routing */}
+
+      <Nav>
+        <NavItem>
+          <NavLink href="/">JSON to Form</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/pattern">Pattern</NavLink>
+        </NavItem>
+      </Nav>
+      <Routes>
+        <Route path="/" element={<Form />} />
+        <Route path="/pattern" element={<Pattern />} />
+      </Routes>
     </div>
   );
 }
